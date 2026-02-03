@@ -1,0 +1,5 @@
+{
+  "name": "SMV Metrics",
+  "description": "A sophisticated Sexual Market Value (SMV) calculator and analysis tool based on Rational Male praxeology. Features offline-first data persistence, comparative hypergamy analysis, and historical tracking.",
+  "requestFramePermissions": []
+}

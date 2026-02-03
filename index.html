@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMV Metrics | SMV Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              void: '#050507',
+              panel: '#0A0A0C',
+              surface: '#121214',
+              platinum: '#E0E0E0',
+              crimson: {
+                DEFAULT: '#FF2A2A',
+                dim: '#4a0d0d'
+              },
+              cyan: {
+                DEFAULT: '#00F0FF',
+                dim: '#004a4f'
+              },
+              magenta: {
+                DEFAULT: '#FF00FF',
+                dim: '#4f004f'
+              },
+              border: '#ffffff1a'
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            backgroundImage: {
+              'grid-pattern': "linear-gradient(to right, #ffffff05 1px, transparent 1px), linear-gradient(to bottom, #ffffff05 1px, transparent 1px)"
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #050507;
+        color: #E0E0E0;
+        font-family: 'Inter', sans-serif;
+      }
+      
+      .bg-grid {
+        background-size: 40px 40px;
+        background-image: linear-gradient(to right, #ffffff05 1px, transparent 1px), linear-gradient(to bottom, #ffffff05 1px, transparent 1px);
+        mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #050507;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 0px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      .neon-text-cyan {
+        text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+      }
+      .neon-text-magenta {
+        text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+      }
+      .neon-border-cyan {
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "framer-motion": "https://esm.sh/framer-motion@^12.31.0",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
+    "date-fns": "https://esm.sh/date-fns@^4.1.0",
+    "dexie": "https://esm.sh/dexie@^4.3.0",
+    "dexie-react-hooks": "https://esm.sh/dexie-react-hooks@^4.2.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
