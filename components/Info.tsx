@@ -31,7 +31,7 @@ export const Info: React.FC = () => {
                 <div>
                     <h3 className="text-white font-bold font-mono text-sm border-l-2 border-crimson pl-3 mb-2">HYPERGAMY.EXE</h3>
                     <p className="text-gray-400 text-xs leading-relaxed">
-                        The biological imperative of the female to seek the highest status male available. Stability is algorithmically maximized when Male_SMV > Female_SMV. Inversion creates "Hypergamous Tension," leading to relationship instability.
+                        The biological imperative of the female to seek the highest status male available. Stability is algorithmically maximized when Male_SMV {'>'} Female_SMV. Inversion creates "Hypergamous Tension," leading to relationship instability.
                     </p>
                 </div>
                 <div>
