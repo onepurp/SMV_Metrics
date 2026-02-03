@@ -3,7 +3,6 @@ import { CalculationResult, Gender } from '../types';
 import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, Tooltip, ReferenceLine, CartesianGrid } from 'recharts';
 import { getAgeCurveData } from '../services/smvLogic';
 import { RefreshCw, Save, TrendingUp, AlertTriangle } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 interface ResultsProps {
   result: CalculationResult;
@@ -58,9 +57,7 @@ export const Results: React.FC<ResultsProps> = ({ result, onReset, onSave, saved
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Primary Score Module */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+        <div 
           className="bg-panel border border-white/10 relative overflow-hidden group"
         >
           <div className="p-1 bg-surface border-b border-white/5 flex justify-between items-center px-4">
@@ -91,13 +88,10 @@ export const Results: React.FC<ResultsProps> = ({ result, onReset, onSave, saved
                 </div>
              </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Chart Module */}
-        <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
+        <div 
             className="lg:col-span-2 bg-panel border border-white/10 flex flex-col"
         >
             <div className="p-1 bg-surface border-b border-white/5 flex justify-between items-center px-4">
@@ -149,13 +143,10 @@ export const Results: React.FC<ResultsProps> = ({ result, onReset, onSave, saved
                     </AreaChart>
                 </ResponsiveContainer>
             </div>
-        </motion.div>
+        </div>
 
         {/* Composition Breakdown */}
-        <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+        <div 
             className="lg:col-span-3 bg-panel border border-white/10"
         >
              <div className="p-1 bg-surface border-b border-white/5 px-4">
@@ -181,7 +172,7 @@ export const Results: React.FC<ResultsProps> = ({ result, onReset, onSave, saved
                     </div>
                 ))}
             </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
