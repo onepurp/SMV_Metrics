@@ -1,5 +1,5 @@
 import React from 'react';
-import { MemoryRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { Calculator } from './components/Calculator';
 import { Comparison } from './components/Comparison';
@@ -8,7 +8,7 @@ import { Info } from './components/Info';
 
 function App() {
   return (
-    <MemoryRouter>
+    <HashRouter>
       <Layout>
         <Routes>
           <Route path="/" element={<Calculator />} />
@@ -17,7 +17,7 @@ function App() {
           <Route path="/info" element={<Info />} />
         </Routes>
       </Layout>
-    </MemoryRouter>
+    </HashRouter>
   );
 }
 
