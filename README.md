@@ -1,6 +1,5 @@
 # SMV Metrics
-
-**SMV Metrics** is a sophisticated Sexual Market Value (SMV) calculator and analysis tool designed with a cyberpunk/sci-fi aesthetic. Based on Rational Male praxeology, this application provides users with tools to calculate theoretical market value, analyze relationship dynamics through hypergamy checks, and track metrics over time.
+Sophisticated Sexual Market Value (SMV) calculator and analysis tool designed with a cyberpunk/sci-fi aesthetic. Based on Rational Male praxeology, this application provides users with tools to calculate theoretical market value, analyze relationship dynamics through hypergamy checks, and track metrics over time.
 
 ## Features
 
