@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Gender, UserInput } from '../types';
 import { calculateSMV } from '../services/smvLogic';
-import { ArrowLeftRight, Crosshair, TrendingUp, AlertTriangle, CheckCircle } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Crosshair, AlertTriangle, CheckCircle } from 'lucide-react';
 
 const defaultMale: UserInput = { gender: Gender.Male, age: 30, socioeconomicStatus: 7, gameBehavior: 6, physicalFitness: 6 };
 const defaultFemale: UserInput = { gender: Gender.Female, age: 24, physicalBeauty: 7, promiscuityCount: 3, attitude: 7 };
@@ -93,10 +92,9 @@ export const Comparison: React.FC = () => {
                 
                 <div className="relative h-4 bg-black border border-white/20 rounded-full overflow-hidden">
                     <div className="absolute left-1/2 top-0 h-full w-px bg-white/50 z-10"></div>
-                    <motion.div 
-                        initial={{ width: 0 }}
-                        animate={{ width: `${Math.min(Math.abs(gap) * 10, 50)}%` }}
-                        className={`absolute top-0 h-full ${gap > 0 ? 'left-1/2 bg-cyan shadow-[0_0_10px_#00F0FF]' : 'right-1/2 bg-magenta shadow-[0_0_10px_#FF00FF]'}`}
+                    <div 
+                        style={{ width: `${Math.min(Math.abs(gap) * 10, 50)}%` }}
+                        className={`absolute top-0 h-full transition-all duration-500 ease-out ${gap > 0 ? 'left-1/2 bg-cyan shadow-[0_0_10px_#00F0FF]' : 'right-1/2 bg-magenta shadow-[0_0_10px_#FF00FF]'}`}
                     />
                 </div>
                 <div className="text-center mt-2 font-mono text-xs text-white">
@@ -138,7 +136,25 @@ export const Comparison: React.FC = () => {
 };
 
 // Helper Component for Comparison
-const CompactSlider = ({ label, value, min = 1, max = 10, onChange, color, align = 'left' }: any) => (
+interface CompactSliderProps {
+  label: string;
+  value: number;
+  min?: number;
+  max?: number;
+  onChange: (value: number) => void;
+  color: 'cyan' | 'magenta';
+  align?: 'left' | 'right';
+}
+
+const CompactSlider: React.FC<CompactSliderProps> = ({ 
+  label, 
+  value, 
+  min = 1, 
+  max = 10, 
+  onChange, 
+  color, 
+  align = 'left' 
+}) => (
     <div className={`flex flex-col ${align === 'right' ? 'items-end' : 'items-start'}`}>
         <div className="flex justify-between w-full mb-1">
             <label className={`text-[10px] font-mono font-bold ${color === 'cyan' ? 'text-cyan' : 'text-magenta'}`}>{label}</label>
@@ -149,7 +165,7 @@ const CompactSlider = ({ label, value, min = 1, max = 10, onChange, color, align
             min={min} 
             max={max} 
             value={value} 
-            onChange={(e) => onChange(+e.target.value)}
+            onChange={(e) => onChange(parseFloat(e.target.value))}
             className={`w-full h-1 bg-surface appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:bg-white ${color === 'cyan' ? '[&::-webkit-slider-thumb]:shadow-[0_0_8px_#00F0FF]' : '[&::-webkit-slider-thumb]:shadow-[0_0_8px_#FF00FF]'} rounded-none`}
         />
     </div>
