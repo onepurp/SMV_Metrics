@@ -5,7 +5,6 @@ import { RangeInput } from './inputs/RangeInput';
 import { ArrowRight, ArrowLeft, Terminal, Cpu } from 'lucide-react';
 import { Results } from './Results';
 import { saveCalculation } from '../services/db';
-import { motion } from 'framer-motion';
 
 const INITIAL_INPUT: UserInput = {
   gender: Gender.Male,
@@ -104,9 +103,7 @@ export const Calculator: React.FC = () => {
 
         {/* Main Input Area */}
         <div className="md:col-span-8">
-            <motion.div 
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
+            <div 
                 key={step}
                 className="bg-panel border border-white/10 p-8 relative"
             >
@@ -235,7 +232,7 @@ export const Calculator: React.FC = () => {
                         </button>
                     )}
                 </div>
-            </motion.div>
+            </div>
         </div>
       </div>
     </div>
