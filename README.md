@@ -26,4 +26,3 @@ This utility is a theoretical construct based on specific behavioral observation
 ## Contributing
 
 Contributions are welcome!
-[https://github.com/onepurp/SMV_METRICS](https://github.com/onepurp/SMV_METRICS)
